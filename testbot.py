@@ -1,10 +1,14 @@
 from this import d
+from unicodedata import name
 import discord
 from discord.ext import commands
 import json
+import os
 
 with open("setting.json", mode = "r", encoding="utf8") as jfile:
     data = json.load(jfile)
+
+
 
 bot = commands.Bot(data["Prefix"])
 
@@ -17,54 +21,17 @@ async def on_ready():
 
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send(f"{round(bot.latency*1000)} ms")
-@bot.command()
-async def PING(ctx):
-    await ctx.send(f"{round(bot.latency*1000)} ms")
+async def reload(ctx, extension):
+    bot.reload_extension(f"cmds.{extension}")
+    await ctx.send(f"重新載入 {extension} 完成！！")
 
 
 
-@bot.command()
-async def 飯(ctx):
-    pic = discord.File(data["pic_rice"])
-    await ctx.send(file = pic)
-@bot.command()
-async def 可樂狗(ctx):
-    pic = discord.File(data["pic_cola dog"])
-    await ctx.send(file = pic)
-@bot.command()
-async def 美女(ctx):
-    pic = discord.File(data["pic_zhan"])
-    await ctx.send(file = pic)
-@bot.command()
-async def suck(ctx):
-    pic = discord.File(data["pic_suck"])
-    await ctx.send(file = pic)
-@bot.command()
-async def milk(ctx):
-    pic = discord.File(data["pic_milk"])
-    await ctx.send(file = pic)
-
-@bot.command()
-async def 拍拍(ctx):
-    await ctx.send(data["url_paipai"])
-@bot.command()
-async def 菜狗(ctx):
-    await ctx.send(data["url_caidog"])
-@bot.command()
-async def dinter(ctx):
-    await ctx.send(data["url_dinter"])
-@bot.command()
-async def 看(ctx):
-    await ctx.send(data["url_douyin_look"])
-@bot.command()
-async def 湯瑪士(ctx):
-    await ctx.send(data["url_thomas_PainTrain"])
-@bot.command()
-async def JOJO(ctx):
-    await ctx.send(data["url_JOJO_meme"])
+for filename in os.listdir("./cmds"):
+    if filename.endswith(".py"):
+        bot.load_extension(f"cmds.{filename[:-3]}")
 
 
 
-bot.run(data["TOKEN"])
+if __name__ == "__main__":
+    bot.run(data["TOKEN"])
