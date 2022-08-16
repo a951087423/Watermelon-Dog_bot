@@ -29,13 +29,22 @@ class 圖影片(Cog_Extension):
     async def milk(self, ctx):
         pic = discord.File(data["pic_milk"])
         await ctx.send(file = pic)
-
+    @commands.command()
+    async def 阿展(self, ctx):
+        pic = discord.File(data["pic_sb"])
+        pic2 = discord.File(data["pic2_sb"])
+        await ctx.send(file = pic)
+        await ctx.send(file = pic2)
     @commands.command()
     async def 拍拍(self, ctx):
-        await ctx.send(data["url_paipai"])
+        vid = discord.File(data["vid_paipai"])
+        await ctx.send(file = vid)
     @commands.command()
     async def 菜狗(self, ctx):
-        await ctx.send(data["url_caidog"])
+        vid = discord.File(data["vid_caidog"])
+        await ctx.send(file = vid)
+
+
     @commands.command()
     async def dinter(self, ctx):
         await ctx.send(data["url_dinter"])
