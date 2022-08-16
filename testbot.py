@@ -22,13 +22,6 @@ async def on_ready():
 
 
 
-@bot.command()
-async def reload(ctx, extension):
-    bot.reload_extension(f"cmds.{extension}")
-    await ctx.send(f"重新載入 {extension} 完成！！")
-
-
-
 for filename in os.listdir("./cmds"):
     if filename.endswith(".py"):
         bot.load_extension(f"cmds.{filename[:-3]}")
