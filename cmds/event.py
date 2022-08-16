@@ -19,6 +19,8 @@ class Event(Cog_Extension):
         keyword = ["豬", "黃文言", "文言"]
         if msg.content in keyword and msg.author != self.bot.user:
             await msg.channel.send("<@581704499945799691> 豬")
+        if msg.content == "龍共":
+            await msg.channel.send("擦了 <@271788577304739840>")
 
 
 

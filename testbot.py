@@ -17,7 +17,8 @@ bot = commands.Bot(data["Prefix"], intents = intents)
 @bot.event
 async def on_ready():
     print("目前登入身分：", bot.user)
-
+    game = discord.Game("~help")
+    await bot.change_presence(status=discord.Status.online, activity=game)
 
 
 for filename in os.listdir("./cmds"):
