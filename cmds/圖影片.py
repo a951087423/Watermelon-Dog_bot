@@ -25,6 +25,7 @@ class 圖影片(Cog_Extension):
     async def suck(self, ctx):
         pic = discord.File(data["pic_suck"])
         await ctx.send(file = pic)
+        await ctx.send("<@682274304825884673>")
     @commands.command()
     async def milk(self, ctx):
         pic = discord.File(data["pic_milk"])

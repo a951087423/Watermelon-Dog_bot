@@ -20,7 +20,7 @@ class 指令(Cog_Extension):
 
     @commands.command()
     async def userinfo(self, ctx, user:discord.Member=None):
-        
+
         roles = []
         if user==None:
             user=ctx.author
@@ -48,16 +48,17 @@ class 指令(Cog_Extension):
 
 
     @commands.command()
-    async def 聊天(self, ctx):
-        embed=discord.Embed(title="列表：", description="註：以下為與機器人聊天指令 不須加入前綴  ~  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ", color=0x58ef2e, timestamp = datetime.datetime.utcnow())
+    async def 聊天(self, ctx, user:discord.Member=None):
+        embed=discord.Embed(title=":white_check_mark: 列表：", description=":warning: 註：以下為 和機器人的聊天字元 不須加入前綴  \" ~ \"  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ", color=0x58ef2e, timestamp = datetime.datetime.utcnow())
         embed.set_author(name="聊天指令", icon_url="https://i.imgur.com/V4AdcL7.png")
         embed.set_thumbnail(url="https://i.imgur.com/RTrXluI.jpg")
-        embed.add_field(name="1.  法鬥", value="-", inline=False)
-        embed.add_field(name="2.  6", value="-", inline=False)
-        embed.add_field(name="3.  你, 妳", value="-", inline=False)
-        embed.add_field(name="4.  賴", value="-", inline=False)
-        embed.add_field(name="5.  豬, 黃文言, 文言", value="-", inline=False)
-        embed.add_field(name="6.  龍共", value="-", inline=False)
+        embed.add_field(name="1.  法鬥", value="‎", inline=False)
+        embed.add_field(name="2.  6", value="‎", inline=False)
+        embed.add_field(name="3.  你 / 妳", value="‎", inline=False)
+        embed.add_field(name="4.  賴", value="‎", inline=False)
+        embed.add_field(name="5.  豬 / 黃文言 / 文言", value="‎", inline=False)
+        embed.add_field(name="6.  龍共", value="‎", inline=False)
+        embed.set_footer(text=f" {ctx.author}", icon_url = ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
 
