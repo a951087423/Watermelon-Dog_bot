@@ -8,7 +8,7 @@ with open("setting.json", mode = "r", encoding="utf8") as jfile:
     data = json.load(jfile)
 
 
-class React(Cog_Extension):
+class 圖影片(Cog_Extension):
     @commands.command()
     async def rice(self, ctx):
         pic = discord.File(data["pic_rice"])
@@ -51,5 +51,5 @@ class React(Cog_Extension):
 
 
 def setup(bot):
-    bot.add_cog(React(bot))
+    bot.add_cog(圖影片(bot))
 

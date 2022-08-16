@@ -5,12 +5,14 @@ from discord.ext import commands
 import json
 import os
 
+intents = discord.Intents.all()
+
 with open("setting.json", mode = "r", encoding="utf8") as jfile:
     data = json.load(jfile)
 
 
 
-bot = commands.Bot(data["Prefix"])
+bot = commands.Bot(data["Prefix"], intents = intents)
 
 
 
