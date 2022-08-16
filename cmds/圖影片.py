@@ -45,6 +45,7 @@ class 圖影片(Cog_Extension):
         await ctx.send(file = vid)
 
 
+
     @commands.command()
     async def dinter(self, ctx):
         await ctx.send(data["url_dinter"])
