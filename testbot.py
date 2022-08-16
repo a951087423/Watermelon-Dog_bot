@@ -5,12 +5,10 @@ from discord.ext import commands
 import json
 import os
 
-intents = discord.Intents.all()
-
 with open("setting.json", mode = "r", encoding="utf8") as jfile:
     data = json.load(jfile)
 
-
+intents = discord.Intents.all()
 
 bot = commands.Bot(data["Prefix"], intents = intents)
 
