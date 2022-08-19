@@ -14,6 +14,10 @@ class 圖影片(Cog_Extension):
         pic = discord.File(data["pic_rice"])
         await ctx.send(file = pic)
     @commands.command()
+    async def 飯(self, ctx):
+        pic = discord.File(data["pic_rice"])
+        await ctx.send(file = pic)
+    @commands.command()
     async def 可樂狗(self, ctx):
         pic = discord.File(data["pic_cola dog"])
         await ctx.send(file = pic)
@@ -36,6 +40,26 @@ class 圖影片(Cog_Extension):
         pic2 = discord.File(data["pic2_sb"])
         await ctx.send(file = pic)
         await ctx.send(file = pic2)
+    @commands.command()
+    async def PK(self, ctx):
+        pic = discord.File(data["pic_peacekeeper"])
+        await ctx.send(file = pic)
+    @commands.command()
+    async def 暐翔(self, ctx):
+        pic = discord.File(data["pic_weixiang"])
+        await ctx.send(file = pic)
+    @commands.command()
+    async def sus(self, ctx):
+        pic = discord.File(data["pic_sus"])
+        await ctx.send(file = pic)
+    @commands.command()
+    async def 紅色魔術師(self, ctx):
+        pic = discord.File(data["pic_redmagic"])
+        await ctx.send(file = pic)
+        await ctx.send("<@432367931058290700>")
+
+
+    
     @commands.command()
     async def 拍拍(self, ctx):
         vid = discord.File(data["vid_paipai"])
